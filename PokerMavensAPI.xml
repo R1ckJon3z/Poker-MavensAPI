@@ -1,0 +1,2024 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PokerMavensAPI</name>
+    </assembly>
+    <members>
+        <member name="T:PokerMavensAPI.AccountsAdd">
+            <summary>  adds a new player account. The player's chip balance will be set automatically to the default "Starting balance" specified in the system settings and returned as a "Balance" parameter in the response. </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsAdd.Player">
+            <summary>  3 to 12 character name (allowed: a to z, A to Z, 0 to 9, underscore and dash) </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsAdd.Title">
+            <summary>  0 to 15 characters </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsAdd.Level">
+            <summary>  0 to 50 characters </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsAdd.RealName">
+            <summary>  optional real name, up to 25 characters </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsAdd.PW">
+            <summary>  player's password </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsAdd.Gender">
+            <summary>  male or female </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsAdd.Location">
+            <summary>  1 to 30 character player location </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsAdd.Permissions">
+            <summary>  comma-separated list of permission tokens </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsAdd.ChipsTransfer">
+            <summary>  Yes or No (default is Yes) </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsAdd.ChipsAccept">
+            <summary>  Yes or No (default is Yes) </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsAdd.Chat">
+            <summary>  date in the format of YYYY-MM-DD HH:MM, representing the date and time when the player's chat privileges are enabled. You may also specify Yes for 0000-00-00 00:00 or No for 9999-99-99 99:99 </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsAdd.ChatColor1">
+            <summary>  optional seated chat color, #RRGGBB format (Pro/Gold feature) </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsAdd.ChatColor2">
+            <summary>  optional observer chat color, #RRGGBB format (Pro/Gold feature) </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsAdd.Email">
+            <summary>  player's email address, up to 80 characters </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsAdd.ValCode">
+            <summary>  optional 8 digit hexadecimal number used for email validation </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsAdd.Avatar">
+            <summary>  a number from 0 to 64 </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsAdd.AvatarFile">
+            <summary>  optional avatar file path (Pro/Gold feature) </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsAdd.Custom">
+            <summary>  optional custom field </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsAdd.Note">
+            <summary>  /// <summary>  optional custom field </summary> </summary>
+        </member>
+        <member name="T:PokerMavensAPI.AccountsDecBalance">
+            <summary>  decrements the account balance of a player. This command does not check to see if you have "Allow negative balance" turned on or not in the account settings. An "Amount" parameter is included in the response that specifies the number of chips that were actually subtracted. A "Balance" parameter is returned with the player's new chip balance. This command is safe to use even while the player is logged in and playing. </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsDecBalance.Result">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsDecBalance.Error">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsDecBalance.Player">
+            <summary>  player's account name </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsDecBalance.Amount">
+            <summary>  number of chips to subtract from account </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsDecBalance.Negative">
+            <summary>  optional parameter set to "Allow", "Zero", or "Skip". Use Allow (the default) to let the player's balance go below 0. Use Zero to reset the account to 0 if the command results in a negative balance. Use Skip to not subtract any chips if the result would be a negative balance </summary>
+        </member>
+        <member name="T:PokerMavensAPI.AccountsDelete">
+            <summary>  deletes the specified account. Player is the only required parameter. </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsDelete.Player">
+            <summary>  player's account name </summary>
+        </member>
+        <member name="T:PokerMavensAPI.AccountsEdit">
+            <summary>  change one or more settings in a player account. Player is the only required parameter and cannot be changed itself. Include other parameters only for the items you want to change. Parameters not included will retain their current values. </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.Result">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.Error">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.Player">
+            <summary>  3 to 12 character name (allowed: a to z, A to Z, 0 to 9, underscore and dash) </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.Title">
+            <summary>  0 to 15 characters </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.Level">
+            <summary>  0 to 50 characters </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.RealName">
+            <summary>  optional real name, up to 25 characters </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.PW">
+            <summary>  player's password </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.Gender">
+            <summary>  male or female </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.Location">
+            <summary>  1 to 30 character player location </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.Balance">
+            <summary>  chip balance (avoid setting this parameter when player is logged in) </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.LastReset">
+            <summary>  date in the format of yyyy-mm-dd hh:mm </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.Permissions">
+            <summary>  comma-separated list of permission tokens </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.ChipsTransfer">
+            <summary>  Yes or No (default is Yes) </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.ChipsAccept">
+            <summary>  Yes or No (default is Yes) </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.Chat">
+            <summary>  date in the format of YYYY-MM-DD HH:MM, representing the date and time when the player's chat privileges are enabled. You may also specify Yes for 0000-00-00 00:00 or No for 9999-99-99 99:99 </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.ChatColor1">
+            <summary>  optional seated chat color, #RRGGBB format (Pro/Gold feature) </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.ChatColor2">
+            <summary>  optional observer chat color, #RRGGBB format (Pro/Gold feature) </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.FirstLogin">
+            <summary>  date in the format of yyyy-mm-dd hh:mm </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.LastLogin">
+            <summary>  date in the format of yyyy-mm-dd hh:mm </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.Email">
+            <summary>  player's email address, up to 80 characters </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.ValCode">
+            <summary>  optional 8 digit hexadecimal number used for email validation </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.Avatar">
+            <summary>  a number from 0 to 64 </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.AvatarFile">
+            <summary>  optional avatar file path (Pro/Gold feature) </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.Custom">
+            <summary>  optional custom field </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.Note">
+            <summary>  /// <summary>  optional custom field </summary> </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.ERake">
+            <summary>  Used to get ERake from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.PRake">
+            <summary>  Used to get PRake from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsEdit.TFees">
+            <summary>  Used to get TFees from JSON reply</summary>
+        </member>
+        <member name="T:PokerMavensAPI.AccountsGet">
+            <summary>  retrieves settings for the account specified by the Player parameter. In additional, a non-blank SessionID will be returned if the player is currently logged in. If they are seated at any ring games, the total amount of chips they have in play will be returned with the RingChips parameter. If they are in the waiting list for any tournaments that have not yet started, the total buy-in and entry fee amounts will be returned with the RegChips parameter. </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.Result">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.Error">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.Player">
+            <summary>  3 to 12 character name (allowed: a to z, A to Z, 0 to 9, underscore and dash) </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.Title">
+            <summary>  Used to get Title from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.Level">
+            <summary>  Used to get Level from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.RealName">
+            <summary>  Used to get RealName from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.PW">
+            <summary>  Used to get PW from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.Location">
+            <summary>  Used to get Location from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.Email">
+            <summary>  Used to get Email from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.ValCode">
+            <summary>  Used to get Valcode from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.Balance">
+            <summary>  Used to get balance from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.RingChips">
+            <summary>  Used to get RingChips from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.RegChips">
+            <summary>  Used to get RegChips from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.LastReset">
+            <summary>  Used to get LastReset from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.Avatar">
+            <summary>  Used to get Avatar from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.AvatarFile">
+            <summary>  Used to get AvatarFile from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.Logins">
+            <summary>  Used to get Logins from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.FirstLogin">
+            <summary>  Used to get FirstLogin from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.LastLogin">
+            <summary>  Used to get LastLogin from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.Gender">
+            <summary>  Used to get Gender from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.Permissions">
+            <summary>  Used to get Permissions from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.Tickets">
+            <summary>  Used to get Tickets from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.ChipsTransfer">
+            <summary>  Used to get ChipsTransfer from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.ChipsAccept">
+            <summary>  Used to get ChipsAccept from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.Chat">
+            <summary>  Used to get Chat from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.ChatColor1">
+            <summary>  Used to get ChatColor1 from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.ChatColor2">
+            <summary>  Used to get ChatColor2 from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.Custom">
+            <summary>  Used to get Custom from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.Note">
+            <summary>  Used to get Note from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.ERake">
+            <summary>  Used to get ERake from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.PRake">
+            <summary>  Used to get PRake from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.TFees">
+            <summary>  Used to get TFees from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsGet.SessionID">
+            <summary>  Used to get SesionID from JSON reply</summary>
+        </member>
+        <member name="T:PokerMavensAPI.AccountsIncBalance">
+            <summary>  increments the account balance of a player. Use a Player parameter to specify the player's name and an Amount parameter to specify the number of chips to add to the account. A "Balance" parameter is returned in the result indicating the player's new chip balance. This command is safe to use even while the player is logged in and playing. </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsIncBalance.Result">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsIncBalance.Error">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsIncBalance.Player">
+            <summary>  player's account name </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsIncBalance.Amount">
+            <summary>  number of chips to add to account </summary>
+        </member>
+        <member name="T:PokerMavensAPI.AccountsList">
+            <summary>  retrieves a list of player accounts. Calling this with no parameters will just return the number of accounts. Set an optional Players field with a comma separated list (no spaces) of player names. Leave this field blank to retrieve all player accounts. Set the Fields parameter to a comma separated list (no spaces) of field names that you want returned. </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.Result">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.Error">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.Fields">
+            <summary> Set the Fields parameter to a comma separated list (no spaces) of field names that you want returned. You may choose any combination of these fields:Player, Title, Level, RealName, Location, Email, ValCode, Balance, RingChips, RegChips, LastReset, Avatar, AvatarFile, Logins, FirstLogin, LastLogin, Gender, Permissions, ChipsTransfer, ChipsAccept, Chat, ChatColor1, ChatColor2, Custom, Note, SessionID </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.Player">
+            <summary>  Used to get Player from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.Title">
+            <summary>  Used to get Title from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.RealName">
+            <summary>  Used to get RealName from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.Location">
+            <summary>  Used to get Location from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.Email">
+            <summary>  Used to get Email from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.ValCode">
+            <summary>  Used to get ValCode from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.Balance">
+            <summary>  Used to get Balance from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.LastReset">
+            <summary>  Used to get LastReset from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.Avatar">
+            <summary>  Used to get Avatar from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.AvatarFile">
+            <summary>  Used to get AvatarFile from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.Logins">
+            <summary>  Used to get Logins from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.FirstLogin">
+            <summary>  Used to get FirstLogin from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.LastLogin">
+            <summary>  Used to get LastLogin from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.Gender">
+            <summary>  Used to get Gender from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.Permissions">
+            <summary>  Used to get Permissions from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.Tickets">
+            <summary>  Used to get Tickets from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.ChipTransfer">
+            <summary>  Used to get ChipTransfer from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.ChipsAccept">
+            <summary>  Used to get ChipsAccept from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.Chat">
+            <summary>  Used to get Chat from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.ChatColor1">
+            <summary>  Used to get ChatColor1 from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.ChatColor2">
+            <summary>  Used to get ChatColor2 from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.Custom">
+            <summary>  Used to get Custom from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.Note">
+            <summary>  Used to get Note from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.ERake">
+            <summary>  Used to get ERake from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.PRake">
+            <summary>  Used to get PRake from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.TFees">
+            <summary>  Used to get TFees from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.RingChips">
+            <summary>  Used to get RingChips from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsList.SessionID">
+            <summary>  Used to get SessionID from JSON reply</summary>
+        </member>
+        <member name="T:PokerMavensAPI.AccountsPassword">
+            <summary>  verifies a player's password. Use a Player parameter to specify a player's name and a PW parameter for the player's password. The password will be hashed by the server and compared to the stored hash. </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsPassword.Player">
+            <summary>  player's account name </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsPassword.PW">
+            <summary>  player's password to verify </summary>
+        </member>
+        <member name="T:PokerMavensAPI.AccountsPermission">
+            <summary>  add, remove, or query individual permissions for a specified player. Use a Player parameter to specify the account, a Permission parameter for the permission token, and an Action parameter set to either "Add", "Remove", or "Query". The Add and Remove actions will return a Result = Ok response if successful. The Query action will return a Yes or No response indicating if the player has the specified permission </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsPermission.Player">
+            <summary>  player's account name </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsPermission.Permission">
+            <summary>  name of permission token </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsPermission.Action">
+            <summary>  action to perform: Add, Remove or Query </summary>
+        </member>
+        <member name="T:PokerMavensAPI.AccountsSessionKey">
+            <summary>  creates a random 80-bit session key for a player specified by the Player parameter. The session key serves as a one-time-only password for an automated login. See the Technical Information/Misc topic for instructions on using session keys. </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsSessionKey.Player">
+            <summary>  player's account name </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsSessionKey.SessionKey">
+            <summary>  player's SessionKey from server </summary>
+        </member>
+        <member name="T:PokerMavensAPI.AccountsTicket">
+            <summary>  dd, remove, or query individual tournament tickets for a specified player. Use a Player parameter to specify the account, a Ticket parameter for the ticket token, and an Action parameter set to either "Add", "Remove", or "Query". The Add and Remove actions will return a Result = Ok response if successful. The Query action will return a Yes or No response indicating if the player has the specified ticket </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsTicket.Player">
+            <summary>  player's account name </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsTicket.Ticket">
+            <summary>  name of ticket token </summary>
+        </member>
+        <member name="P:PokerMavensAPI.AccountsTicket.Action">
+            <summary>  action to perform: Add, Remove or Query </summary>
+        </member>
+        <member name="T:PokerMavensAPI.BlacklistAdd">
+            <summary>  add a new entry into the player blacklist. You must specify at least one parameter in the group of Player, IP, and PC. </summary>
+        </member>
+        <member name="P:PokerMavensAPI.BlacklistAdd.Player">
+            <summary>  player's account name </summary>
+        </member>
+        <member name="P:PokerMavensAPI.BlacklistAdd.Date">
+            <summary>  optional date in the format of yyyy-mm-dd hh:mm, otherwise the current date will be used </summary>
+        </member>
+        <member name="P:PokerMavensAPI.BlacklistAdd.IP">
+            <summary>  player's IP address </summary>
+        </member>
+        <member name="P:PokerMavensAPI.BlacklistAdd.PC">
+            <summary>  player's computer ID in 8-digit hexadecimal format </summary>
+        </member>
+        <member name="P:PokerMavensAPI.BlacklistAdd.Match">
+            <summary>  this is either "All" or "Any" </summary>
+        </member>
+        <member name="P:PokerMavensAPI.BlacklistAdd.Note">
+            <summary>  optional note </summary>
+        </member>
+        <member name="T:PokerMavensAPI.BlacklistDelete">
+            <summary>  deletes an item from the blacklist. Specify the item with an ID parameter. </summary>
+        </member>
+        <member name="P:PokerMavensAPI.BlacklistDelete.ID">
+            <summary>  ID of banned player </summary>
+        </member>
+        <member name="T:PokerMavensAPI.BlacklistEdit">
+            <summary>  edit one or more fields for a blacklist item, as specified with an ID parameter. Other than the ID, only include parameters for the fields you want to change, otherwise the field will retain its current value </summary>
+        </member>
+        <member name="P:PokerMavensAPI.BlacklistEdit.ID">
+            <summary>  ID of banned player </summary>
+        </member>
+        <member name="P:PokerMavensAPI.BlacklistEdit.Player">
+            <summary>  player's account name </summary>
+        </member>
+        <member name="P:PokerMavensAPI.BlacklistEdit.Date">
+            <summary>  optional date in the format of yyyy-mm-dd hh:mm, otherwise the current date will be used </summary>
+        </member>
+        <member name="P:PokerMavensAPI.BlacklistEdit.IP">
+            <summary>  player's IP address </summary>
+        </member>
+        <member name="P:PokerMavensAPI.BlacklistEdit.PC">
+            <summary>  player's computer ID in 8-digit hexadecimal format </summary>
+        </member>
+        <member name="P:PokerMavensAPI.BlacklistEdit.Match">
+            <summary>  this is either "All" or "Any" </summary>
+        </member>
+        <member name="P:PokerMavensAPI.BlacklistEdit.Note">
+            <summary>  optional note </summary>
+        </member>
+        <member name="T:PokerMavensAPI.BlacklistGet">
+            <summary>  retrieves the fields for the specified blacklist item, as determined by an ID parameter. </summary>
+        </member>
+        <member name="P:PokerMavensAPI.BlacklistGet.ID">
+            <summary>  ID of banned player </summary>
+        </member>
+        <member name="T:PokerMavensAPI.BlacklistList">
+            <summary>  retrieves a list of all blacklist entries. Calling this with no parameters will just return a count of entries. Set the Fields parameter to a comma separated list of field names that you want returned. Do not include spaces in the list. You may choose any combination of these fields: ID, Date, Player, IP, PC, Match, Note</summary>
+        </member>
+        <member name="P:PokerMavensAPI.BlacklistList.Fields">
+            <summary>  ID of banned player </summary>
+        </member>
+        <member name="T:PokerMavensAPI.ConnectionsList">
+            <summary>  retrieves the list of all current connections. Calling this with no parameters will just return the number of connections. Set the Fields parameter to a comma separated list of field names that you want returned. Do not include spaces in the list. You may choose any combination of these fields: SessionID, Status, Player, PC, IP, Connect, Login, LastAction, PacketsIn, PacketsOut  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.ConnectionsList.Fields">
+            <summary>  You may choose any combination of these fields: SessionID, Status, Player, PC, IP, Connect, Login, LastAction, PacketsIn, PacketsOut </summary>
+        </member>
+        <member name="T:PokerMavensAPI.ConnectionsGet">
+            <summary>  retrieves values for the connection specified by the SessionID parameter.  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.ConnectionsGet.SessionID">
+            <summary>  sessionID of the player </summary>
+        </member>
+        <member name="T:PokerMavensAPI.ConnectionsMessage">
+            <summary>  ends a popup message to the person at the specified SessionID parameter with the message text specified in the Message parameter. Use an asterisk (*) as the SessionID to send the message to all connections.  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.ConnectionsMessage.SessionID">
+            <summary>  sessionID of the player </summary>
+        </member>
+        <member name="P:PokerMavensAPI.ConnectionsMessage.Message">
+            <summary>  sessionID of the player </summary>
+        </member>
+        <member name="T:PokerMavensAPI.ConnectionsTerminate">
+            <summary>  terminates the connection at the specified SessionID parameter.  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.ConnectionsTerminate.SessionID">
+            <summary>  sessionID of the player </summary>
+        </member>
+        <member name="T:PokerMavensAPI.LogsAddEvent">
+            <summary>  adds a line to the Event Log without performing any other command. Use the Log parameter to append custom text to the entry. Note that this Log parameter is an option with all of the other API commands, also.  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.LogsAddEvent.Log">
+            <summary>  append custom text to event log </summary>
+        </member>
+        <member name="T:PokerMavensAPI.LogsError">
+            <summary>  call without any parameters to retrieve a list of dates where an error log file was created.  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.LogsError.Date">
+            <summary>  parameter in the format of yyyy-mm-dd to retrieve the contents of an error log file </summary>
+        </member>
+        <member name="T:PokerMavensAPI.LogsEvent">
+            <summary>  call without any parameters to retrieve a list of dates where an event log file was created.  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.LogsEvent.Date">
+            <summary>  parameter in the format of yyyy-mm-dd to retrieve the contents of an error log file </summary>
+        </member>
+        <member name="T:PokerMavensAPI.LogsHandHistory">
+            <summary>  call without any parameters to retrieve a list of dates and table names where a hand history file was created.  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.LogsHandHistory.Date">
+            <summary>  parameter in the format of yyyy-mm-dd  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.LogsHandHistory.Name">
+            <summary>  parameter to retrieve the contents of a hand history file </summary>
+        </member>
+        <member name="P:PokerMavensAPI.LogsHandHistory.Hand">
+            <summary>  parameter (indicating the hand number) to retrieve the hand history of a single hand. The Date and Name parameters are not needed when the Hand parameter is used. The server caches the last 100 hands played so the specified hand must still be in the cache or an error will be returned. Although the full hand number can be specified, only the first portion (left of the dash) is required. Use the Hand callback event system to get notified when a new hand is available. </summary>
+        </member>
+        <member name="T:PokerMavensAPI.LogsLobbyChat">
+            <summary>  call without any parameters to retrieve a list of dates where a lobby chat log file was created.  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.LogsLobbyChat.Date">
+            <summary>  parameter in the format of yyyy-mm-dd  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.RingGamesAdd">
+            <summary>   adds a new ring game to the system. The newly created game will be in an offline state.  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.Result">
+            <summary>  Used to get JSON response  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.Name">
+            <summary>  a unique name, from 1 to 25 characters  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.Description">
+            <summary>  optional table description, up to 500 characters  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.Auto">
+            <summary>  set to "Yes" or "No" to put game online when server is started  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.Game">
+            <summary>  specify "Limit Hold'em", "Pot Limit Hold'em", "No Limit Hold'em", "Limit Omaha", "Pot Limit Omaha", "No Limit Omaha", "Limit Omaha Hi-Lo", "Pot Limit Omaha Hi-Lo", "No Limit Omaha Hi-Lo", "Limit Razz", "Limit Stud", "Limit Stud Hi-Lo", "Mixed"  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.MixedList">
+            <summary>  if Game is set to "Mixed" then this field must contain a comma-separated list of two or more game types  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.PW">
+            <summary>  (optional) specify a password needed to take a seat </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.Private">
+            <summary>  set to "Yes" to prevent observing without the password or "No" to allow observers </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.PermPlay">
+            <summary>  play permission token, 15 alphanumeric characters max </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.PermObserve">
+            <summary>  observe permission token, 15 alphanumeric characters max </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.PermPlayerChat">
+            <summary>  player chat permission token, 15 alphanumeric characters max </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.PermObserverChat">
+            <summary>  observer chat permission token, 15 alphanumeric characters max </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.SuspendChatAllIn">
+            <summary>  either "Yes" or "No" </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.Seats">
+            <summary>  number of seats, from 2 to 10 </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.SmallestChip">
+            <summary>  0.01, 0.05, 0.25, 1, 5, 25, 100, 500, 1000, 5000, 25000, 100000, 500000, 1000000, 5000000, 25000000, 100000000, 500000000, 1000000000 </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.BuyInMin">
+            <summary>  number of chips </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.BuyInMax">
+            <summary>  number of chips </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.BuyInDef">
+            <summary>  number of chips </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.RakePercent">
+            <summary>  percent number (Pro/Gold feature) </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.RakeCap">
+            <summary>  number of chips, or 0 for no cap (Pro/Gold feature) </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.TurnClock">
+            <summary>  number of seconds, from 10 to 120 (Pro/Gold feature) </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.TurnWarning">
+            <summary>  number of seconds, from 5 to 119 (Pro/Gold feature) </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.TimeBank">
+            <summary>  number of seconds, from 0 to 600 </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.BankSync">
+            <summary>  Set to "Yes" or "No" for time bank sync </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.BankReset">
+            <summary>  number of hands, from 0 to 999999 </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.DisProtect">
+            <summary>  set to "Yes" or "No" for disconnect protection </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.SmallBlind">
+            <summary>  number of chips </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.BigBlind">
+            <summary>  number of chips </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.AllowStraddle">
+            <summary>  "Yes" or "No" </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.SmallBet">
+            <summary>  number of chips </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.BigBet">
+            <summary>  number of chips </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.Ante">
+            <summary>  number of chips </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.AnteAll">
+            <summary>  "Yes" or "No" </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.BringIn">
+            <summary>  number of chips </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.DupeIPs">
+            <summary>  set to "Yes" or "No" to allow or disallow players with the same IP address at the table </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.RatholeMinutes">
+            <summary>  number of minutes, from 0 to 120 </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.SitoutMinutes">
+            <summary>  number of minutes, from 1 to 120 </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesAdd.SitoutRelaxed">
+            <summary>  set to "Yes" or "No" </summary>
+        </member>
+        <member name="T:PokerMavensAPI.RingGamesDelete">
+            <summary>   deletes the ring game specified by the Name parameter. The game must already be in an offline state before it can be deleted.  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesDelete.Result">
+            <summary>  get JSON response for the api result  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesDelete.Name">
+            <summary>  a unique name, from 1 to 25 characters  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.RingGamesEdit">
+            <summary>   edits one or more properties of an offline ring game specified by the Name parameter. Fields not specified will retain their current value.  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.Result">
+            <summary>  get the JSON response for Result  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.Error">
+            <summary>  get the JSON response for Result  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.Name">
+            <summary>  a unique name, from 1 to 25 characters  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.NewName">
+            <summary>  a unique name, from 1 to 25 characters  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.Description">
+            <summary>  optional table description, up to 500 characters  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.Auto">
+            <summary>  set to "Yes" or "No" to put game online when server is started  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.Game">
+            <summary>  specify "Limit Hold'em", "Pot Limit Hold'em", "No Limit Hold'em", "Limit Omaha", "Pot Limit Omaha", "No Limit Omaha", "Limit Omaha Hi-Lo", "Pot Limit Omaha Hi-Lo", "No Limit Omaha Hi-Lo", "Limit Razz", "Limit Stud", "Limit Stud Hi-Lo", "Mixed"  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.MixedList">
+            <summary>  if Game is set to "Mixed" then this field must contain a comma-separated list of two or more game types  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.PW">
+            <summary>  (optional) specify a password needed to take a seat </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.Private">
+            <summary>  set to "Yes" to prevent observing without the password or "No" to allow observers </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.PermPlay">
+            <summary>  play permission token, 15 alphanumeric characters max </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.PermObserve">
+            <summary>  observe permission token, 15 alphanumeric characters max </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.PermPlayerChat">
+            <summary>  player chat permission token, 15 alphanumeric characters max </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.PermObserverChat">
+            <summary>  observer chat permission token, 15 alphanumeric characters max </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.SuspendChatAllIn">
+            <summary>  either "Yes" or "No" </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.Seats">
+            <summary>  number of seats, from 2 to 10 </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.SmallestChip">
+            <summary>  0.01, 0.05, 0.25, 1, 5, 25, 100, 500, 1000, 5000, 25000, 100000, 500000, 1000000, 5000000, 25000000, 100000000, 500000000, 1000000000 </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.BuyInMin">
+            <summary>  number of chips </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.BuyInMax">
+            <summary>  number of chips </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.BuyInDef">
+            <summary>  number of chips </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.RakePercent">
+            <summary>  percent number (Pro/Gold feature) </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.RakeCap">
+            <summary>  number of chips, or 0 for no cap (Pro/Gold feature) </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.TurnClock">
+            <summary>  number of seconds, from 10 to 120 (Pro/Gold feature) </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.TimeBank">
+            <summary>  number of seconds, from 0 to 600 </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.BankReset">
+            <summary>  number of hands, from 0 to 999999 </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.DisProtect">
+            <summary>  set to "Yes" or "No" for disconnect protection </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.SmallBlind">
+            <summary>  number of chips </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.BigBlind">
+            <summary>  number of chips </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.AllowStraddle">
+            <summary>  "Yes" or "No" </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.SmallBet">
+            <summary>  number of chips </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.BigBet">
+            <summary>  number of chips </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.Ante">
+            <summary>  number of chips </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.AnteAll">
+            <summary>  "Yes" or "No" </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.BringIn">
+            <summary>  number of chips </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.DupeIPs">
+            <summary>  set to "Yes" or "No" to allow or disallow players with the same IP address at the table </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.RatholeMinutes">
+            <summary>  number of minutes, from 0 to 120 </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.SitoutMinutes">
+            <summary>  number of minutes, from 1 to 120 </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesEdit.SitoutRelaxed">
+            <summary>  set to "Yes" or "No" </summary>
+        </member>
+        <member name="T:PokerMavensAPI.RingGamesGet">
+            <summary>   retrieve the settings for the ring game specified by the Name parameter.  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.Result">
+            <summary>  get the JSON response for Result  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.Name">
+            <summary>  name of ring game  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.Status">
+            <summary>  get the JSON response for Status  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.Description">
+            <summary>  get the JSON response for Description  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.Auto">
+            <summary>  get the JSON response for Auto  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.Game">
+            <summary>  get the JSON response for Game  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.MixedList">
+            <summary>  get the JSON response for MixedList  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.PW">
+            <summary>  get the JSON response for PW  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.Private">
+            <summary>  get the JSON response for Private  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.PermPlay">
+            <summary>  get the JSON response for PermPlay </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.PermObserve">
+            <summary>  get the JSON response for PermObserve  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.PermPlayerChat">
+            <summary>  get the JSON response for PermPlayerChat </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.PermObserverChat">
+            <summary>  get the JSON response for PermObserverChat  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.SuspenChatAllIn">
+            <summary>  get the JSON response for SuspendChatAllIn  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.Seats">
+            <summary>  get the JSON response for Seats  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.SmallestChip">
+            <summary>  get the JSON response for SmallestChip  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.BuyInMin">
+            <summary>  get the JSON response for BuyInMin  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.BuyInMax">
+            <summary>  get the JSON response for BuyInMax  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.BuyInDef">
+            <summary>  get the JSON response for BuyInDef  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.RakePercent">
+            <summary>  get the JSON response for RakePercent  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.RakeCap">
+            <summary>  get the JSON response for RakeCap  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.TurnClock">
+            <summary>  get the JSON response for TurnClock  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.TurnWarning">
+            <summary>  get the JSON response for TurnWarning </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.TimeBank">
+            <summary>  get the JSON response for TimeBank  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.BankSync">
+            <summary>  get the JSON response for BankSync  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.BankReset">
+            <summary>  get the JSON response for BankReset  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.DisProtect">
+            <summary>  get the JSON response for DisProtect  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.SmallBlind">
+            <summary>  get the JSON response for SmallBlind  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.BigBlind">
+            <summary>  get the JSON response for BigBlind  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.AllowStraddle">
+            <summary>  get the JSON response for AllowStraddle  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.SmallBet">
+            <summary>  get the JSON response for SmallBet  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.BigBet">
+            <summary>  get the JSON response for BigBet  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.Ante">
+            <summary>  get the JSON response for Ante  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.AnteAll">
+            <summary>  get the JSON response for AnteAll  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.BringIn">
+            <summary>  get the JSON response for BringIn  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.DupeIPs">
+            <summary>  get the JSON response for DupeIPs  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.RatholeMinutes">
+            <summary>  get the JSON response for RatholeMinutes  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.SitoutMinutes">
+            <summary>  get the JSON response for SitoutMinutes  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesGet.SitoutRelaxed">
+            <summary>  get the JSON response for SitoutRelaxed  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.RingGamesList">
+            <summary>   retrieves the list of all ring games. Calling this with no parameters will just return the number of ring games. Set the Fields parameter to a comma separated list of field names that you want returned. Do not include spaces in the list. You may choose any combination of these fields: Name, Status, Description, Auto, Game, MixedList, PW, Private, PermPlay, PermObserve, PermPlayerChat, PermObserverChat, SuspendChatAllIn, Seats, SmallestChip, BuyInMin, BuyInMax, BuyInDef, RakePercent, RakeCap, TurnClock, TimeBank, BankReset, DisProtect, SmallBlind, BigBlind, AllowStraddle, SmallBet, BigBet, Ante, AnteAll, BringIn, DupeIPs, RatholeMinutes, SitoutMinutes, SitoutRelaxed  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.Fields">
+            <summary>  parameter to a comma separated list of field names that you want returned.  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.Result">
+            <summary>  Used to get Result from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.Name">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.Status">
+            <summary>  Used to get Status from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.Description">
+            <summary>  Used to get Description from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.Auto">
+            <summary>  Used to get Auto from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.Game">
+            <summary>  Used to get Game from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.MixedList">
+            <summary>  Used to get MixedList from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.PW">
+            <summary>  Used to get PW from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.Private">
+            <summary>  Used to get Private from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.PermPlay">
+            <summary>  Used to get PermPlay from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.PermObserve">
+            <summary>  Used to get PermObserve from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.PermPlayerChat">
+            <summary>  Used to get PermPlayerChat from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.PermObserverChat">
+            <summary>  Used to get PermObserverChat from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.SuspendChatAllIn">
+            <summary>  Used to get SuspendChatAllIn from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.Seats">
+            <summary>  Used to get Seats from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.SmallestChip">
+            <summary>  Used to get SmallestChip from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.BuyInMin">
+            <summary>  Used to get BuyInMin from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.BuyInMax">
+            <summary>  Used to get BuyInMax from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.BuyInDef">
+            <summary>  Used to get BuyInDef from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.RakePercent">
+            <summary>  Used to get RakePercent from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.RakeCap">
+            <summary>  Used to get RakeCap from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.TurnClock">
+            <summary>  Used to get TurnClock from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.TimeBank">
+            <summary>  Used to get TimeBank from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.BankReset">
+            <summary>  Used to get BankReset from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.Disprotect">
+            <summary>  Used to get DisProtect from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.SmallBlind">
+            <summary>  Used to get SmallBlind from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.BigBlind">
+            <summary>  Used to get BigBlind from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.AllowStraddle">
+            <summary>  Used to get AllowStraddle from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.SmallBet">
+            <summary>  Used to get SmallBet from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.BigBet">
+            <summary>  Used to get BigBet from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.Ante">
+            <summary>  Used to get Ante from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.AnteAll">
+            <summary>  Used to get AnteAll from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.BringIn">
+            <summary>  Used to get BringIn from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.DupeIPs">
+            <summary>  Used to get DupeIPs from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.RatholeMinutes">
+            <summary>  Used to get RatholeMinutes from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.SitoutMinutes">
+            <summary>  Used to get SitoutMinutes from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesList.SitoutRelaxed">
+            <summary>  Used to get SitoutRelaxed from JSON reply</summary>
+        </member>
+        <member name="T:PokerMavensAPI.RingGamesMessage">
+            <summary>   sends an Administrator message to the chat box for the ring game specified by the Name parameter. Put the text of the message in the Message parameter. Use an asterisk (*) as the Name parameter to send the message to all ring game tables.  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesMessage.Result">
+            <summary>  get the JSON response for Result  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesMessage.Error">
+            <summary>  get the JSON response for Result  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesMessage.Name">
+            <summary>  name of ring game  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesMessage.Message">
+            <summary>  text of the message  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.RingGamesOffline">
+            <summary>   closes the ring game specified by the Name parameter and puts it in an offline state. Set an optional Now parameter to "Yes" to close the table immediately. Otherwise, the table will close when the current hand is finished.  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesOffline.Result">
+            <summary>  get teh JSON response for Result  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesOffline.Name">
+            <summary>  name of ring game  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesOffline.Now">
+            <summary>  parameter to "Yes" to close the table immediately. Otherwise, the table will close when the current hand is finished.  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.RingGamesOnline">
+            <summary>   puts the ring game specified by the Name parameter into an online state, making it available for play.  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesOnline.Result">
+            <summary>  get teh JSON response for Result  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesOnline.Name">
+            <summary>  name of ring game  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.RingGamesOpen">
+            <summary>   opens a ring game table in the player client for the specified player (who must already be logged in). Specify the ring game by the Name parameter and the player by the Player parameter.  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesOpen.Result">
+            <summary>  get teh JSON response for Result  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesOpen.Name">
+            <summary>  name of ring game  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesOpen.Player">
+            <summary>  name of player  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.RingGamesPause">
+            <summary>   pauses an online ring game specified by the Name parameter. Set parameter Now to "Yes" (the default) to pause the table immediately or to "No" to pause it once the current hand completes.  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesPause.Result">
+            <summary>  get teh JSON response for Result  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesPause.Name">
+            <summary>  name of ring game  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesPause.Now">
+            <summary>  parameter to "Yes" to close the table immediately. Otherwise, the table will close when the current hand is finished.  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.RingGamesPlaying">
+            <summary>   retrieves the list of seated players for the ring game specified by the Name parameter. The Away field shows the number of minutes that a player has been sitting out.  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesPlaying.Result">
+            <summary>  get the JSON response for Result  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesPlaying.Name">
+            <summary>  name of ring game  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.RingGamesResume">
+            <summary>   resumes a paused ring game specified by the Name parameter.  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesResume.Result">
+            <summary>  get teh JSON response for Result  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesResume.Name">
+            <summary>  name of ring game  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.RingGamesWaiting">
+            <summary>   retrieves the list of players in the waiting list for the ring game specified by the Name parameter.   </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesWaiting.Result">
+            <summary>  get teh JSON response for Result  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.RingGamesWaiting.Name">
+            <summary>  name of ring game  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.SystemAccount">
+            <summary>   This command allows you to get or change the balance of a house account, specified by the Account parameter ("Master", "Ring", "Rake", "Tourney", or "EntryFee"). Set an Action parameter ("Set", "Inc", or "Dec") along with an Amount parameter to set, increment, or decrement the specified account by that amount. To retrieve the current balance, set Action to "Get" (Amount parameter not used in this case). The result will contain a Balance parameter indicating the new balance and a Change parameter indicating the difference between the previous balance and the new balance.   </summary>
+        </member>
+        <member name="P:PokerMavensAPI.SystemAccount.Account">
+            <summary>  parameter ("Master", "Ring", "Rake", "Tourney", or "EntryFee")  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.SystemAccount.Action">
+            <summary>  parameter ("Set", "Inc", or "Dec")  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.SystemAccount.Amount">
+            <summary>  parameter to set, increment, or decrement the specified account by that amount  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.SystemBalance">
+            <summary>   This command returns the current balance of all house accounts plus the sum total of all player accounts. A House parameter is also returned with the total of all house accounts (not including the Players account). There are no calling parameters for this command.   </summary>
+        </member>
+        <member name="T:PokerMavensAPI.SystemGet">
+            <summary>   gets the value for the specified Property parameter.   </summary>
+        </member>
+        <member name="P:PokerMavensAPI.SystemGet.Property">
+            <summary>  check api docs for all the available properties.  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.SystemGet.Value">
+            <summary>  Used to get Value from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.SystemGet.Result">
+            <summary>  Used to get Result from JSON reply</summary>
+        </member>
+        <member name="T:PokerMavensAPI.SystemLobbyMessage">
+            <summary>   sends a message to the Lobby chat box. Put the text of the message in the Message parameter. Specify a optional Player parameter to send the message from a specific player account (which must exist but does not need to be logged in) or leave blank to send the message from the Administrator.   </summary>
+        </member>
+        <member name="P:PokerMavensAPI.SystemLobbyMessage.Message">
+            <summary>  text of the message  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.SystemLobbyMessage.Player">
+            <summary>  name of specific player  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.SystemSet">
+            <summary>   sets the Value of the specified system Property. For example, to turn off the login chime, set the Property parameter to "LoginChime" and the Value parameter to "No". See the SystemGet command above for a list of all available system property names. Properties marked as "read-only" cannot be changed while the game server is online.   </summary>
+        </member>
+        <member name="P:PokerMavensAPI.SystemSet.Property">
+            <summary>  check api docs for all the available properties.  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.SystemSet.Value">
+            <summary>  value for the property  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.SystemStats.Logins">
+            <summary>  Used to get Logins from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.SystemStats.FilledSeats">
+            <summary>  Used to get FilledSeats from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.SystemStats.OccupiedTables">
+            <summary>  Used to get OccupiedTables from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.SystemStats.UpSeconds">
+            <summary>  Used to get UpSeconds from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.SystemStats.UpTime">
+            <summary>  Used to get UpTime from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.SystemStats.LocalTime">
+            <summary>  Used to get LocalTime from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.SystemStats.UTCTime">
+            <summary>  Used to get UTCTime from JSON reply</summary>
+        </member>
+        <member name="T:PokerMavensAPI.TournamentResults">
+            <summary>   call without any parameters to retrieve a list of dates and tournament names where a tournament results file was created. Call with a Date parameter in the format of yyyy-mm-dd and a Name parameter to retrieve the contents of a tournament results file.    </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentResults.Name">
+            <summary>  tournament name  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentResults.Date">
+            <summary>  parameter in the format of yyyy-mm-dd  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.TournamentsAdd">
+            <summary>   adds a new tournament to the system. The newly created game will be in an offline state.   </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.Result">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.Error">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.Name">
+            <summary>  a unique name, from 1 to 25 characters  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.Game">
+            <summary>  specify "Limit Hold'em", "Pot Limit Hold'em", "No Limit Hold'em", "Limit Omaha", "Pot Limit Omaha", "No Limit Omaha", "Limit Omaha Hi-Lo", "Pot Limit Omaha Hi-Lo", "No Limit Omaha Hi-Lo", "Limit Razz", "Limit Stud", "Limit Stud Hi-Lo", "Mixed" </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.MixedList">
+            <summary>  if Game is set to "Mixed" then this field must contain a comma-separated list of two or more game types  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.Shootout">
+            <summary>  set to "Yes" for a shootout format or "No" for a standard format  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.Description">
+            <summary>  optional tournament description, up to 500 characters  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.Auto">
+            <summary>  set to "Yes" or "No" to put game online when server is started  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.PW">
+            <summary>  (optional) specify a password needed to register  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.Private">
+            <summary>  set to "Yes" to prevent observing without the password or "No" to allow observers  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.PermRegister">
+            <summary>  register permission token, 15 alphanumeric characters max  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.PermUnregister">
+            <summary>  unregister permission token, 15 alphanumeric characters max  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.PermObserve">
+            <summary>  observe permission token, 15 alphanumeric characters max  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.PermPlayerChat">
+            <summary>  player chat permission token, 15 alphanumeric characters max  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.PermObserverChat">
+            <summary>  observer chat permission token, 15 alphanumeric characters max  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.SuspendChatAllIn">
+            <summary>  either "Yes" or "No"  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.Tables">
+            <summary>  number of tables, from 1 to 100  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.Seats">
+            <summary>  number of seats per table, from 2 to 10  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.StartFull">
+            <summary>  either "Yes" or "No"  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.StartMin">
+            <summary>  number from 0 to 10  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.StartCode">
+            <summary>  number from 0 (disabled) to 999999  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.StartTime">
+            <summary>  yyyy-mm-dd hh:mm format (0000-00-00 00:00 = disabled)  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.RegMinutes">
+            <summary>  number of minutes, 0 to 999999  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.LateRegMinutes">
+            <summary>  number of minutes, 0 to 999999  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.MinPlayers">
+            <summary>  number from 2 to 1000  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.RecurMinutes">
+            <summary>  number from -1 to 999999  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.NoShowMinutes">
+            <summary>  number from 0 to 999999  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.BuyIn">
+            <summary>  number of chips  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.EntryFee">
+            <summary>  number of chips  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.Ticket">
+            <summary>  ticket token  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.TicketRequired">
+            <summary>  "Yes" or "No"  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.TicketFunded">
+            <summary>  "Yes" or "No"  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.PrizeBonus">
+            <summary>  number of chips  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.MultiplyBonus">
+            <summary>  set to "Yes", "No", or "Min"  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.Chips">
+            <summary>  number of starting chips, from 10 to 25000  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.AddOnChips">
+            <summary>  number of add-on chips, from 0 to 50000  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.TurnClock">
+            <summary>  number of seconds, from 10 to 120  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.TimeBank">
+            <summary>  number of seconds, from 0 to 600  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.BankReset">
+            <summary>  number of hands, from 0 to 999999  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.DisProtect">
+            <summary>  set to "Yes" or "No" for disconnect protection  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.Level">
+            <summary>  level minutes, from 1 to 1000  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.RebuyLevels">
+            <summary>  number of levels in rebuy period, 0 to 1000  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.Threshold">
+            <summary>  max chips allowed before rebuy, 0 to 999999  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.MaxRebuys">
+            <summary>  maximum rebuys allowed (-1 = unlimited)  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.RebuyCost">
+            <summary>  number of chips  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.RebuyFee">
+            <summary>  number of chips  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.BreakTime">
+            <summary>  number of minutes per rest break, 0 to 60  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.BreakLevels">
+            <summary>  number of levels between rest breaks, 0 to 1000  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.StopOnChop">
+            <summary>  either "Yes" or "No"  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.BringInPercent">
+            <summary>  number 1 to 99  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.Blinds">
+            <summary>  blind schedule in the format of "SB1/BB1/Ante1, SB2/BB2/Ante2", etc. Leave blank for the default schedule  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.Payout">
+            <summary>  payout structure in the format of "2-4, 100.00|5-7, 65.00, 35.00|8-10, 50.00, 30.00, 20.00". Leave blank for the default structure  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.PayoutTickets">
+            <summary>  optional comma-separated list of ticket tokens  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsAdd.UnregLogout">
+            <summary>  "Yes" or "No", indicates if player should be unregistered if they log out  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.TournamentsDelete">
+            <summary>   adds a new tournament to the system. The newly created game will be in an offline state.   </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsDelete.Result">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsDelete.Error">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsDelete.Name">
+            <summary>  name of the tournament  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.TournamentsEdit">
+            <summary>   edits one or more properties of an offline tournament specified by the Name parameter. Fields not specified will retain their current value.   </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.Result">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.Name">
+            <summary>  name of the tournament  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.NewName">
+            <summary>  the new name of the tournament  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.Game">
+            <summary>  specify "Limit Hold'em", "Pot Limit Hold'em", "No Limit Hold'em", "Limit Omaha", "Pot Limit Omaha", "No Limit Omaha", "Limit Omaha Hi-Lo", "Pot Limit Omaha Hi-Lo", "No Limit Omaha Hi-Lo", "Limit Razz", "Limit Stud", "Limit Stud Hi-Lo", "Mixed" </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.MixedList">
+            <summary>  if Game is set to "Mixed" then this field must contain a comma-separated list of two or more game types  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.Shootout">
+            <summary>  set to "Yes" for a shootout format or "No" for a standard format  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.Description">
+            <summary>  optional tournament description, up to 500 characters  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.Auto">
+            <summary>  set to "Yes" or "No" to put game online when server is started  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.PW">
+            <summary>  (optional) specify a password needed to register  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.Private">
+            <summary>  set to "Yes" to prevent observing without the password or "No" to allow observers  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.PermRegister">
+            <summary>  register permission token, 15 alphanumeric characters max  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.PermUnregister">
+            <summary>  unregister permission token, 15 alphanumeric characters max  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.PermObserve">
+            <summary>  observe permission token, 15 alphanumeric characters max  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.PermPlayerChat">
+            <summary>  player chat permission token, 15 alphanumeric characters max  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.PermObserverChat">
+            <summary>  observer chat permission token, 15 alphanumeric characters max  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.SuspendChatAllIn">
+            <summary>  either "Yes" or "No"  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.Tables">
+            <summary>  number of tables, from 1 to 100  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.Seats">
+            <summary>  number of seats per table, from 2 to 10  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.StartFull">
+            <summary>  either "Yes" or "No"  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.StartMin">
+            <summary>  number from 0 to 10  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.StartCode">
+            <summary>  number from 0 (disabled) to 999999  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.StartTime">
+            <summary>  yyyy-mm-dd hh:mm format (0000-00-00 00:00 = disabled)  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.RegMinutes">
+            <summary>  number of minutes, 0 to 999999  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.LateRegMinutes">
+            <summary>  number of minutes, 0 to 999999  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.MinPlayers">
+            <summary>  number from 2 to 1000  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.RecurMinutes">
+            <summary>  number from -1 to 999999  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.NoShowMinutes">
+            <summary>  number from 0 to 999999  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.BuyIn">
+            <summary>  number of chips  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.EntryFee">
+            <summary>  number of chips  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.Ticket">
+            <summary>  ticket token  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.TicketRequired">
+            <summary>  "Yes" or "No"  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.TicketFunded">
+            <summary>  "Yes" or "No"  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.PrizeBonus">
+            <summary>  number of chips  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.MultiplyBonus">
+            <summary>  set to "Yes", "No", or "Min"  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.Chips">
+            <summary>  number of starting chips, from 10 to 25000  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.AddOnChips">
+            <summary>  number of add-on chips, from 0 to 50000  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.TurnClock">
+            <summary>  number of seconds, from 10 to 120  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.TimeBank">
+            <summary>  number of seconds, from 0 to 600  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.BankReset">
+            <summary>  number of hands, from 0 to 999999  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.DisProtect">
+            <summary>  set to "Yes" or "No" for disconnect protection  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.Level">
+            <summary>  level minutes, from 1 to 1000  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.RebuyLevels">
+            <summary>  number of levels in rebuy period, 0 to 1000  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.Threshold">
+            <summary>  max chips allowed before rebuy, 0 to 999999  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.MaxRebuys">
+            <summary>  maximum rebuys allowed (-1 = unlimited)  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.RebuyCost">
+            <summary>  number of chips  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.RebuyFee">
+            <summary>  number of chips  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.BreakTime">
+            <summary>  number of minutes per rest break, 0 to 60  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.BreakLevels">
+            <summary>  number of levels between rest breaks, 0 to 1000  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.StopOnChop">
+            <summary>  either "Yes" or "No"  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.BringInPercent">
+            <summary>  number 1 to 99  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.Blinds">
+            <summary>  blind schedule in the format of "SB1/BB1/Ante1, SB2/BB2/Ante2", etc. Leave blank for the default schedule  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.Payout">
+            <summary>  payout structure in the format of "2-4, 100.00|5-7, 65.00, 35.00|8-10, 50.00, 30.00, 20.00". Leave blank for the default structure  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.PayoutTickets">
+            <summary>  optional comma-separated list of ticket tokens  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsEdit.UnregLogout">
+            <summary>  "Yes" or "No", indicates if player should be unregistered if they log out  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.TournamentsGet">
+            <summary>   adds a new tournament to the system. The newly created game will be in an offline state.   </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.Result">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.Error">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.Name">
+            <summary>  name of the tournament  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.Status">
+            <summary>  Status of the tournament  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.Game">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.MixedList">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.Shootout">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.Description">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.Auto">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.PW">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.Private">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.PermRegister">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.PermUnregister">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.PermObserve">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.PermPlayerChat">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.PermObserverChat">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.SuspendChatAllIn">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.Tables">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.Seats">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.StartFull">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.StartMin">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.StartCode">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.StartTime">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.RegMinutes">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.LateRegMinutes">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.MinPlayers">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.RecurMinutes">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.NoShowMinutes">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.BuyIn">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.EntryFee">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.Ticket">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.TicketRequired">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.TicketFunded">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.PrizeBonus">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.MultiplyBonus">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.Chips">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.AddOnChips">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.TurnClock">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.TurnWarning">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.TimeBank">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.BankSync">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.BankReset">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.DisProtect">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.Level">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.RebuyLevels">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.Threshold">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.MaxRebuys">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.RebuyCost">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.RebuyFee">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.BreakTime">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.BreakLevels">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.StopOnChop">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.BringInPercent">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.Blinds">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.Payout">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.PayoutTickets">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsGet.UnregLogout">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="T:PokerMavensAPI.TournamentsList">
+            <summary>   retrieves the list of all tournaments. Calling this with no parameters will just return the number of tournaments. Set the Fields parameter to a comma separated list of field names that you want returned. Do not include spaces in the list. You may choose any combination of these fields: Name, Status, Description, Auto, Game, MixedList, Shootout, PW, Private, PermRegister, PermUnregister, PermObserve, PermPlayerChat, PermObserverChat, SuspendChatAllIn, Tables, Seats, StartFull, StartMin, StartCode, StartTime, RegMinutes, LateRegMinutes, MinPlayers, RecurMinutes, NoShowMinutes, BuyIn, EntryFee, Ticket, TicketRequired, TicketFunded, PrizeBonus, MultiplyBonus, Chips, AddOnChips, TurnClock, TimeBank, BankReset, DisProtect, Level, RebuyLevels, Threshold, MaxRebuys, RebuyCost, RebuyFee, BreakTime, BreakLevels, StopOnChop, BringInPercent, Blinds, Payout, PayoutTickets, UnregLogout   </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.Result">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.Error">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.Fields">
+            <summary>  parameter to a comma separated list of field names that you want returned  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.Name">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.Status">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.Game">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.MixedList">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.Shootout">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.Description">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.Auto">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.PW">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.Private">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.PermRegister">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.PermUnregister">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.PermObserve">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.PermPlayerChat">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.PermObserverChat">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.SuspendChatAllIn">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.Tables">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.Seats">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.StartFull">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.StartMin">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.StartCode">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.StartTime">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.RegMinutes">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.LateRegMinutes">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.MinPlayers">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.RecurMinutes">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.NoShowMinutes">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.BuyIn">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.EntryFee">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.Ticket">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.TicketRequired">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.TicketFunded">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.PrizeBonus">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.MultiplyBonus">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.Chips">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.AddOnChips">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.TurnClock">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.TurnWarning">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.TimeBank">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.BankSync">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.BankReset">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.DisProtect">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.Level">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.RebuyLevels">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.Threshold">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.MaxRebuys">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.RebuyCost">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.RebuyFee">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.BreakTime">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.BreakLevels">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.StopOnChop">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.BringInPercent">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.Blinds">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.Payout">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.PayoutTickets">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsList.UnregLogout">
+            <summary>  Used to get Name from JSON reply</summary>
+        </member>
+        <member name="T:PokerMavensAPI.TournamentsMessage">
+            <summary>   sends an Administrator message to the chat box for all tables in the tournament specified by the Name parameter. Put the text of the message in the Message parameter. Use an asterisk (*) as the Name parameter to send the message to all tournaments.   </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsMessage.Name">
+            <summary>  name of the tournament  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsMessage.Message">
+            <summary>  message to send to tournament  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.TournamentsOffline">
+            <summary>   adds a new tournament to the system. The newly created game will be in an offline state.   </summary>  
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsOffline.Name">
+            <summary>  name of tournament  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsOffline.Now">
+            <summary>  parameter to "Yes" to close the table immediately. Otherwise, the table will close when the current hand is finished.  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.TournamentsOnline">
+            <summary>   puts the tournament specified by the Name parameter into an online state, making it available for play.   </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsOnline.Result">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsOnline.Name">
+            <summary>  name of the tournament  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.TournamentsOpen">
+            <summary>   opens a tournament table in the player client for the specified player (who must already be logged in). Specify the tournament by the Name parameter, the table number by the Table parameter (defaults to 1), and the player by the Player parameter.   </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsOpen.Name">
+            <summary>  tournament name  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsOpen.Table">
+            <summary>  table number (default is 1)  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsOpen.Player">
+            <summary>  name of player  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.TournamentsPause">
+            <summary>   pauses a running tournament specified by the Name parameter. Set parameter Now to "Yes" (the default) to pause all tables immediately or to "No" to pause each table individually once the current hand completes.   </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsPause.Name">
+            <summary>  name of tournament  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsPause.Now">
+            <summary>  parameter to "Yes" to close the table immediately. Otherwise, the table will close when the current hand is finished.  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.TournamentsPlaying">
+            <summary>   retrieves the list of seated and finished players for the tournament specified by the Name parameter. The tournament number and running time are also included. The Away field shows the number of minutes that a player has been sitting out.   </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsPlaying.Name">
+            <summary>  name of tournament  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.TournamentsRegister">
+            <summary>   puts the tournament specified by the Name parameter into an online state, making it available for play.   </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsRegister.Result">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsRegister.Error">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsRegister.Name">
+            <summary>  tournament name  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsRegister.Negative">
+            <summary>  parameter to bypass the system "Allow negative balance" setting  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsRegister.Player">
+            <summary>  name of player  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.TournamentsRemoveNoShows">
+            <summary>   removes all "no-show" players (never clicked their Ready button) from a running tournament specified by the Name parameter. Their buyin/entry fees are removed from the prizepool and added back to their accounts. No-shows can be removed up to the point of payout distribution.   </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsRemoveNoShows.Result">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsRemoveNoShows.Error">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsRemoveNoShows.Name">
+            <summary>  tournament name  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.TournamentsResume">
+            <summary>   resumes a paused tournament specified by the Name parameter.   </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsResume.Name">
+            <summary>  tournament name  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.TournamentsStart">
+            <summary>   manually starts the tournament specified by the Name parameter. There must be at least two players registered to start a tournament.   </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsStart.Result">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsStart.Error">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsStart.Name">
+            <summary>  tournament name  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.TournamentStats">
+            <summary>   retrieves basic statistics on a running tournament specified by the Name parameter. The tournament number and running time are also included. The Time parameter will be blank if the tournament is not currently running.   </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentStats.Name">
+            <summary>  tournament name  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.TournamentsUnregister">
+            <summary>   removes a player specified by the Player parameter from the waiting list of a tournament specified by the Name parameter and refunds their account with the applicable buy-in.   </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsUnregister.Result">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsUnregister.Error">
+            <summary>  get the JSON response for Result </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsUnregister.Name">
+            <summary>  tournament name  </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsUnregister.Player">
+            <summary>  name of player  </summary>
+        </member>
+        <member name="T:PokerMavensAPI.TournamentsWaiting">
+            <summary>   manually starts the tournament specified by the Name parameter. There must be at least two players registered to start a tournament.   </summary>
+        </member>
+        <member name="P:PokerMavensAPI.TournamentsWaiting.Name">
+            <summary>  tournament name  </summary>
+        </member>
+    </members>
+</doc>
