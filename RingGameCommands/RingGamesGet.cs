@@ -30,6 +30,9 @@ namespace PokerMavensAPI
         /// <summary>  get the JSON response for MixedList  </summary>
         public string MixedList { get; set; }
 
+        /// <summary>  get the JSON response for MixedList  </summary>
+        public string MixedHands { get; set; }
+
         /// <summary>  get the JSON response for PW  </summary>
         public string PW { get; set; }
 
@@ -49,10 +52,13 @@ namespace PokerMavensAPI
         public string PermObserverChat { get; set; }
 
         /// <summary>  get the JSON response for SuspendChatAllIn  </summary>
-        public string SuspenChatAllIn { get; set; }
+        public string SuspendChatAllIn { get; set; }
 
         /// <summary>  get the JSON response for Seats  </summary>
         public string Seats { get; set; }
+
+        /// <summary>  get the JSON response for MixedList  </summary>
+        public string PrimaryCurrency { get; set; }
 
         /// <summary>  get the JSON response for SmallestChip  </summary>
         public string SmallestChip { get; set; }
@@ -65,6 +71,9 @@ namespace PokerMavensAPI
 
         /// <summary>  get the JSON response for BuyInDef  </summary>
         public string BuyInDef { get; set; }
+
+        /// <summary>  get the JSON response for MixedList  </summary>
+        public string CapLimit { get; set; }
 
         /// <summary>  get the JSON response for RakePercent  </summary>
         public string RakePercent { get; set; }
@@ -125,6 +134,12 @@ namespace PokerMavensAPI
 
         /// <summary>  get the JSON response for SitoutRelaxed  </summary>
         public string SitoutRelaxed { get; set; }
+
+        /// <summary>  get the JSON response for MixedList  </summary>
+        public string TableGraphic { get; set; }
+
+        /// <summary>  get the JSON response for MixedList  </summary>
+        public string Note { get; set; }
 
     }
 }

@@ -18,6 +18,9 @@ namespace PokerMavensAPI
         /// <summary>  3 to 12 character name (allowed: a to z, A to Z, 0 to 9, underscore and dash) </summary>
         public string Player { get; set; }
 
+        /// <summary>  Used to get AdminProfile from JSON reply</summary>
+        public string AdminProfile { get; set; }
+
         /// <summary>  Used to get Title from JSON reply</summary>
         public string Title { get; set; }
 
@@ -42,14 +45,26 @@ namespace PokerMavensAPI
         /// <summary>  Used to get balance from JSON reply</summary>
         public string Balance { get; set; }
 
+        /// <summary>  Used to get balance from JSON reply</summary>
+        public string Balance2 { get; set; }
+
         /// <summary>  Used to get RingChips from JSON reply</summary>
         public string RingChips { get; set; }
+
+        /// <summary>  Used to get RingChips from JSON reply</summary>
+        public string RingChips2 { get; set; }
 
         /// <summary>  Used to get RegChips from JSON reply</summary>
         public string RegChips { get; set; }
 
+        /// <summary>  Used to get RegChips from JSON reply</summary>
+        public string RegChips2 { get; set; }
+
         /// <summary>  Used to get LastReset from JSON reply</summary>
         public string LastReset { get; set; }
+
+        /// <summary>  Used to get LastReset from JSON reply</summary>
+        public string LastReset2 { get; set; }
 
         /// <summary>  Used to get Avatar from JSON reply</summary>
         public string Avatar { get; set; }
@@ -78,8 +93,14 @@ namespace PokerMavensAPI
         /// <summary>  Used to get ChipsTransfer from JSON reply</summary>
         public string ChipsTransfer { get; set; }
 
+        /// <summary>  Used to get ChipsTransfer from JSON reply</summary>
+        public string ChipsTransfer2 { get; set; }
+
         /// <summary>  Used to get ChipsAccept from JSON reply</summary>
         public string ChipsAccept { get; set; }
+
+        /// <summary>  Used to get ChipsAccept from JSON reply</summary>
+        public string ChipsAccept2 { get; set; }
 
         /// <summary>  Used to get Chat from JSON reply</summary>
         public string Chat { get; set; }
@@ -99,11 +120,20 @@ namespace PokerMavensAPI
         /// <summary>  Used to get ERake from JSON reply</summary>
         public string ERake { get; set; }
 
+        /// <summary>  Used to get ERake from JSON reply</summary>
+        public string ERake2 { get; set; }
+
         /// <summary>  Used to get PRake from JSON reply</summary>
         public string PRake { get; set; }
 
+        /// <summary>  Used to get PRake from JSON reply</summary>
+        public string PRake2 { get; set; }
+
         /// <summary>  Used to get TFees from JSON reply</summary>
         public string TFees { get; set; }
+
+        /// <summary>  Used to get TFees from JSON reply</summary>
+        public string TFees2 { get; set; }
 
         /// <summary>  Used to get SesionID from JSON reply</summary>
         public string SessionID { get; set; }

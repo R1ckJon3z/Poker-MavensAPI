@@ -12,6 +12,9 @@ namespace PokerMavensAPI
         /// <summary>  get the JSON response for Result </summary>
         public string Result { get; set; }
 
+        /// <summary>  get the JSON response for Result </summary>
+        public string Error { get; set; }
+
         /// <summary>  name of the tournament  </summary>
         public string Name { get; set; }
 
@@ -87,6 +90,12 @@ namespace PokerMavensAPI
         /// <summary>  number from -1 to 999999  </summary>
         public string RecurMinutes { get; set; }
 
+        /// <summary>  number from -1 to 999999  </summary>
+        public string ResetSeconds { get; set; }
+
+        /// <summary>  number from -1 to 999999  </summary>
+        public string MaxRuns { get; set; }
+
         /// <summary>  number from 0 to 999999  </summary>
         public string NoShowMinutes { get; set; }
 
@@ -123,6 +132,9 @@ namespace PokerMavensAPI
         /// <summary>  number of seconds, from 0 to 600  </summary>
         public string TimeBank { get; set; }
 
+        /// <summary>  number from -1 to 999999  </summary>
+        public string BankSync { get; set; }
+
         /// <summary>  number of hands, from 0 to 999999  </summary>
         public string BankReset { get; set; }
 
@@ -151,10 +163,16 @@ namespace PokerMavensAPI
         public string BreakTime { get; set; }
 
         /// <summary>  number of levels between rest breaks, 0 to 1000  </summary>
-        public string BreakLevels { get; set; }
+        public string BreakInterval { get; set; }
+
+        /// <summary>  number from -1 to 999999  </summary>
+        public string BreakSync { get; set; }
 
         /// <summary>  either "Yes" or "No"  </summary>
         public string StopOnChop { get; set; }
+
+        /// <summary>  either "Yes" or "No"  </summary>
+        public string PropChop { get; set; }
 
         /// <summary>  number 1 to 99  </summary>
         public string BringInPercent { get; set; }
@@ -165,11 +183,23 @@ namespace PokerMavensAPI
         /// <summary>  payout structure in the format of "2-4, 100.00|5-7, 65.00, 35.00|8-10, 50.00, 30.00, 20.00". Leave blank for the default structure  </summary>
         public string Payout { get; set; }
 
+        /// <summary>  payout structure in the format of "2-4, 100.00|5-7, 65.00, 35.00|8-10, 50.00, 30.00, 20.00". Leave blank for the default structure  </summary>
+        public string PayoutFractions { get; set; }
+
         /// <summary>  optional comma-separated list of ticket tokens  </summary>
         public string PayoutTickets { get; set; }
 
         /// <summary>  "Yes" or "No", indicates if player should be unregistered if they log out  </summary>
         public string UnregLogout { get; set; }
+
+        /// <summary>  payout structure in the format of "2-4, 100.00|5-7, 65.00, 35.00|8-10, 50.00, 30.00, 20.00". Leave blank for the default structure  </summary>
+        public string TableGraphic { get; set; }
+
+        /// <summary>  payout structure in the format of "2-4, 100.00|5-7, 65.00, 35.00|8-10, 50.00, 30.00, 20.00". Leave blank for the default structure  </summary>
+        public string TableGraphicFinal { get; set; }
+
+        /// <summary>  payout structure in the format of "2-4, 100.00|5-7, 65.00, 35.00|8-10, 50.00, 30.00, 20.00". Leave blank for the default structure  </summary>
+        public string Note { get; set; }
 
     }
 }

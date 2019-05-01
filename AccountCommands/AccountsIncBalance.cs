@@ -20,5 +20,8 @@ namespace PokerMavensAPI
 
         /// <summary>  number of chips to add to account </summary>
         public string Amount { get; set; }
+
+        /// <summary>  number of chips to add to account </summary>
+        public string Balance { get; set; }
     }
 }

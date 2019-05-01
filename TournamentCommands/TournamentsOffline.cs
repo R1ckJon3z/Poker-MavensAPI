@@ -9,6 +9,12 @@ namespace PokerMavensAPI
     /// <summary>   adds a new tournament to the system. The newly created game will be in an offline state.   </summary>  
     public class TournamentsOffline
     {
+        /// <summary>  get the JSON response for Result </summary>
+        public string Result { get; set; }
+
+        // <summary>  get the JSON response for Result </summary>
+        public string Error { get; set; }
+
         /// <summary>  name of tournament  </summary>
         public string Name { get; set; }
 

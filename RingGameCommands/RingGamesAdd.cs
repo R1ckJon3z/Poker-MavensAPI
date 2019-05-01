@@ -12,6 +12,9 @@ namespace PokerMavensAPI
         /// <summary>  Used to get JSON response  </summary>
         public string Result { get; set; }
 
+        /// <summary>  Used to get JSON response  </summary>
+        public string Error { get; set; }
+
         /// <summary>  a unique name, from 1 to 25 characters  </summary>
         public string Name { get; set; }
 

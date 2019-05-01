@@ -16,8 +16,9 @@ namespace PokerMavensAPI
         /// <summary>  Used to get Result from JSON reply</summary>
         public string Result { get; set; }
 
-        
-        
+        /// <summary>  get the JSON response for Result  </summary>
+        public string Error { get; set; }
+
         /// <summary>  Used to get Name from JSON reply</summary>
         public List<string> Name { get; set; }
 

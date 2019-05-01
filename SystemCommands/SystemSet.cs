@@ -14,5 +14,11 @@ namespace PokerMavensAPI
 
         /// <summary>  value for the property  </summary>
         public string Value { get; set; }
+
+        /// <summary>  Used to get Result from JSON reply</summary>
+        public string Result { get; set; }
+
+        /// <summary>  get the JSON response for Result </summary>
+        public string Error { get; set; }
     }
 }

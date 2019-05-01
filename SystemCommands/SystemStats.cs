@@ -8,6 +8,12 @@ namespace PokerMavensAPI
 {
     public class SystemStats
     {
+        /// <summary>  get the JSON response for Result </summary>
+        public string Result { get; set; }
+
+        /// <summary>  get the JSON response for Error </summary>
+        public string Error { get; set; }
+
         /// <summary>  Used to get Logins from JSON reply</summary>
         public string Logins { get; set; }
 

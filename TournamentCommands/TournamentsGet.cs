@@ -92,7 +92,16 @@ namespace PokerMavensAPI
         public string RecurMinutes { get; set; }
 
         /// <summary>  Used to get Name from JSON reply</summary>
+        public string ResetSeconds { get; set; }
+
+        /// <summary>  Used to get Name from JSON reply</summary>
+        public string MaxRuns { get; set; }
+
+        /// <summary>  Used to get Name from JSON reply</summary>
         public string NoShowMinutes { get; set; }
+
+        /// <summary>  Used to get Name from JSON reply</summary>
+        public string PrimaryCurrency { get; set; }
 
         /// <summary>  Used to get Name from JSON reply</summary>
         public string BuyIn { get; set; }
@@ -161,10 +170,16 @@ namespace PokerMavensAPI
         public string BreakTime { get; set; }
 
         /// <summary>  Used to get Name from JSON reply</summary>
-        public string BreakLevels { get; set; }
+        public string BreakInterval { get; set; }
+
+        /// <summary>  Used to get Name from JSON reply</summary>
+        public string BreakSync { get; set; }
 
         /// <summary>  Used to get Name from JSON reply</summary>
         public string StopOnChop { get; set; }
+
+        /// <summary>  Used to get Name from JSON reply</summary>
+        public string PropChop { get; set; }
 
         /// <summary>  Used to get Name from JSON reply</summary>
         public string BringInPercent { get; set; }
@@ -176,10 +191,22 @@ namespace PokerMavensAPI
         public string Payout { get; set; }
 
         /// <summary>  Used to get Name from JSON reply</summary>
+        public string PayoutFractions { get; set; }
+
+        /// <summary>  Used to get Name from JSON reply</summary>
         public string PayoutTickets { get; set; }
 
         /// <summary>  Used to get Name from JSON reply</summary>
         public string UnregLogout { get; set; }
+
+        /// <summary>  Used to get Name from JSON reply</summary>
+        public string TableGraphic { get; set; }
+
+        /// <summary>  Used to get Name from JSON reply</summary>
+        public string TableGraphicFinal { get; set; }
+
+        /// <summary>  Used to get Name from JSON reply</summary>
+        public string Note { get; set; }
 
     }
 }

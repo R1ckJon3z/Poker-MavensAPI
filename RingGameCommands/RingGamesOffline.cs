@@ -12,6 +12,9 @@ namespace PokerMavensAPI
         /// <summary>  get teh JSON response for Result  </summary>
         public string Result { get; set; }
 
+        /// <summary>  get teh JSON response for Result  </summary>
+        public string Error { get; set; }
+
         /// <summary>  name of ring game  </summary>
         public string Name { get; set; }
 

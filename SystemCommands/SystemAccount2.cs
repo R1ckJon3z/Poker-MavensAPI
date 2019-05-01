@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace PokerMavensAPI
 {
-    /// <summary>   This command allows you to get or change the balance of a house account, specified by the Account parameter ("Master", "Ring", "Rake", "Tourney", or "EntryFee"). Set an Action parameter ("Set", "Inc", or "Dec") along with an Amount parameter to set, increment, or decrement the specified account by that amount. To retrieve the current balance, set Action to "Get" (Amount parameter not used in this case). The result will contain a Balance parameter indicating the new balance and a Change parameter indicating the difference between the previous balance and the new balance.   </summary>
-    public class SystemAccount
+    public class SystemAccount2
     {
+        /// <summary>  Used to get Result from JSON reply</summary>
+        public string Result { get; set; }
+
+        /// <summary>  get the JSON response for Result </summary>
+        public string Error { get; set; }
         /// <summary>  parameter ("Master", "Ring", "Rake", "Tourney", or "EntryFee")  </summary>
         public string Account { get; set; }
 
@@ -23,5 +27,6 @@ namespace PokerMavensAPI
 
         /// <summary>  parameter to set, increment, or decrement the specified account by that amount  </summary>
         public string Change { get; set; }
+
     }
 }

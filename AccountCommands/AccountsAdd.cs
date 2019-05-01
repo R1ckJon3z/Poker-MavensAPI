@@ -9,6 +9,13 @@ namespace PokerMavensAPI
     /// <summary>  adds a new player account. The player's chip balance will be set automatically to the default "Starting balance" specified in the system settings and returned as a "Balance" parameter in the response. </summary>
     public class AccountsAdd
     {
+
+        /// <summary>  get the JSON response for Result </summary>
+        public string Result { get; set; }
+
+        /// <summary>  get the JSON response for Result </summary>
+        public string Error { get; set; }
+
         /// <summary>  3 to 12 character name (allowed: a to z, A to Z, 0 to 9, underscore and dash) </summary>
         public string Player { get; set; }
         /// <summary>  0 to 15 characters </summary>

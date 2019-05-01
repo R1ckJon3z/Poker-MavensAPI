@@ -14,6 +14,9 @@ namespace PokerMavensAPI
         public string Result { get; set; }
 
         /// <summary>  get the JSON response for Result </summary>
+        public string Accounts { get; set; }
+
+        /// <summary>  get the JSON response for Result </summary>
         public string Error { get; set; }
         
         /// <summary> Set the Fields parameter to a comma separated list (no spaces) of field names that you want returned. You may choose any combination of these fields:Player, Title, Level, RealName, Location, Email, ValCode, Balance, RingChips, RegChips, LastReset, Avatar, AvatarFile, Logins, FirstLogin, LastLogin, Gender, Permissions, ChipsTransfer, ChipsAccept, Chat, ChatColor1, ChatColor2, Custom, Note, SessionID </summary>
