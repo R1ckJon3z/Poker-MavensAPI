@@ -1,125 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{54E9B325-B9A7-4C53-B6E4-F845F997F58C}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PokerMavensAPI</RootNamespace>
-    <AssemblyName>PokerMavensAPI</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>PokerMavensAPI.xml</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>PokerMavensAPI.xml</DocumentationFile>
-  </PropertyGroup>
+
+
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\inetpub\wwwroot\DNN704\bin\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
+
+
   <ItemGroup>
-    <Compile Include="AccountCommands\AccountsAdd.cs" />
-    <Compile Include="AccountCommands\AccountsDecBalance.cs" />
-    <Compile Include="AccountCommands\AccountsDelete.cs" />
-    <Compile Include="AccountCommands\AccountsEdit.cs" />
-    <Compile Include="AccountCommands\AccountsGet.cs" />
-    <Compile Include="AccountCommands\AccountsIncBalance.cs" />
-    <Compile Include="AccountCommands\AccountsList.cs" />
-    <Compile Include="AccountCommands\AccountsPassword.cs" />
-    <Compile Include="AccountCommands\AccountsPermission.cs" />
-    <Compile Include="AccountCommands\AccountsSessionKey.cs" />
-    <Compile Include="AccountCommands\AccountsTicket.cs" />
-    <Compile Include="AccountCommands\HttpPost.cs" />
-    <Compile Include="BlackListCommands\BlacklistAdd.cs" />
-    <Compile Include="BlackListCommands\BlacklistDelete.cs" />
-    <Compile Include="BlackListCommands\BlacklistEdit.cs" />
-    <Compile Include="BlackListCommands\BlacklistGet.cs" />
-    <Compile Include="BlackListCommands\BlacklistList.cs" />
-    <Compile Include="ConnectionCommands\ConnectionsList.cs" />
-    <Compile Include="ConnectionCommands\ConnectionsGet.cs" />
-    <Compile Include="ConnectionCommands\ConnectionsMessage.cs" />
-    <Compile Include="ConnectionCommands\ConnectionsTerminate.cs" />
-    <Compile Include="LogCommands\LogsAddEvent.cs" />
-    <Compile Include="LogCommands\LogsError.cs" />
-    <Compile Include="LogCommands\LogsEvent.cs" />
-    <Compile Include="LogCommands\LogsHandHistory.cs" />
-    <Compile Include="LogCommands\LogsLobbyChat.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RingGameCommands\RingGamesAdd.cs" />
-    <Compile Include="RingGameCommands\RingGamesDelete.cs" />
-    <Compile Include="RingGameCommands\RingGamesEdit.cs" />
-    <Compile Include="RingGameCommands\RingGamesGet.cs" />
-    <Compile Include="RingGameCommands\RingGamesList.cs" />
-    <Compile Include="RingGameCommands\RingGamesMessage.cs" />
-    <Compile Include="RingGameCommands\RingGamesOffline.cs" />
-    <Compile Include="RingGameCommands\RingGamesOnline.cs" />
-    <Compile Include="RingGameCommands\RingGamesOpen.cs" />
-    <Compile Include="RingGameCommands\RingGamesPause.cs" />
-    <Compile Include="RingGameCommands\RingGamesPlaying.cs" />
-    <Compile Include="RingGameCommands\RingGamesResume.cs" />
-    <Compile Include="RingGameCommands\RingGamesWaiting.cs" />
-    <Compile Include="SystemCommands\SystemAccount.cs" />
-    <Compile Include="SystemCommands\SystemBalance.cs" />
-    <Compile Include="SystemCommands\SystemGet.cs" />
-    <Compile Include="SystemCommands\SystemLobbyMessage.cs" />
-    <Compile Include="SystemCommands\SystemSet.cs" />
-    <Compile Include="SystemCommands\SystemStats.cs" />
-    <Compile Include="TournamentCommands\TournamentResults.cs" />
-    <Compile Include="TournamentCommands\TournamentsAdd.cs" />
-    <Compile Include="TournamentCommands\TournamentsDelete.cs" />
-    <Compile Include="TournamentCommands\TournamentsEdit.cs" />
-    <Compile Include="TournamentCommands\TournamentsGet.cs" />
-    <Compile Include="TournamentCommands\TournamentsList.cs" />
-    <Compile Include="TournamentCommands\TournamentsMessage.cs" />
-    <Compile Include="TournamentCommands\TournamentsOffline.cs" />
-    <Compile Include="TournamentCommands\TournamentsOnline.cs" />
-    <Compile Include="TournamentCommands\TournamentsOpen.cs" />
-    <Compile Include="TournamentCommands\TournamentsPause.cs" />
-    <Compile Include="TournamentCommands\TournamentsPlaying.cs" />
-    <Compile Include="TournamentCommands\TournamentsRegister.cs" />
-    <Compile Include="TournamentCommands\TournamentsRemoveNoShows.cs" />
-    <Compile Include="TournamentCommands\TournamentsResume.cs" />
-    <Compile Include="TournamentCommands\TournamentsStart.cs" />
-    <Compile Include="TournamentCommands\TournamentsStats.cs" />
-    <Compile Include="TournamentCommands\TournamentsUnregister.cs" />
-    <Compile Include="TournamentCommands\TournamentsWaiting.cs" />
+    <PackageReference Include="NewtonSoft.Json" Version="12.0.2" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
 </Project>
