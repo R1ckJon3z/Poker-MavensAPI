@@ -14,11 +14,11 @@ namespace PokerMavensAPI
         public string Result { get; set; }
 
         /// <summary>  name of ring game  </summary>
-        public string Name { get; set; }
+        public int Count { get; set; }
         public List<string> Player {get; set;}
-        public List<string> Seat {get; set;}
-        public List<string> Chips {get; set;}
-        public List<string> Net {get; set;}
-        public List<string> Away {get; set;}
+        public List<int> Seat {get; set;}
+        public List<double> Chips {get; set;}
+        public List<double> Net {get; set;}
+        public List<int> Away {get; set;}
     }
 }
